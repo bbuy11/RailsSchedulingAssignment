@@ -14,6 +14,10 @@ There is a rake file to import the data from the csv files to the database calle
 
 ## How to run
 
+Type "rails db:migrate" in the terminal to avoid a migration error. There is a rake file to import the data from the csv files to the database called import.rake, found in app/lib/tasks. It can be run using "rake import:load_csv".
+
+After both previous steps have been done, the site is ready!
+
 The server runs on the default port for local host (3000).
 
 To run, type the command "rails s" in the terminal to start the server and navigate to [http://localhost:3000](http://localhost:3000) in your browser.
