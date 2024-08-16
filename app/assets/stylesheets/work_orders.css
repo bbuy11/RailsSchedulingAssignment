@@ -1,0 +1,49 @@
+/* Styling for Work Orders Scheduling Page*/
+
+.schedule-grid {
+    display: flex;
+  }
+  
+  .time-column {
+    width: 100px;
+    border-right: 1px solid #ccc;
+    position: relative;
+  }
+  
+  .time-header {
+    height: 50px; 
+    border-bottom: 1px solid #ccc;
+    background-color: #f0f0f0; 
+  }
+  
+  .time-label {
+    height: 60px;
+    border-bottom: 1px solid #eee;
+    line-height: 60px; 
+    text-align: center;
+  }
+  
+  .technician-column {
+    flex: 1;
+    border-right: 1px solid #ccc;
+    position: relative;
+  }
+  
+  .technician-header {
+    height: 50px; 
+    border-bottom: 1px solid #ccc;
+    background-color: #f0f0f0; 
+    text-align: center;
+    line-height: 50px; 
+  }
+  
+  .work-order {
+    position: absolute;
+    width: 100%; 
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+  }
+  

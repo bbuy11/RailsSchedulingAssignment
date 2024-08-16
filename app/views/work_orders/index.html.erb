@@ -1,0 +1,45 @@
+<div class="schedule-grid">
+  <!-- Time Column -->
+  <div class="time-column">
+    <div class="time-header"></div>
+    <!-- Time Labels -->
+    <div class="time-label"><%= "12:00 AM" %></div>
+    <% (1..11).each do |hour| %>
+      <div class="time-label"><%= "#{hour}:00 AM" %></div>
+    <% end %>
+
+    <% (12..12).each do %>
+      <div class="time-label"><%= "12:00 PM" %></div>
+    <% end %>
+
+    <% (1..11).each do |hour| %>
+      <div class="time-label"><%= "#{hour}:00 PM" %></div>
+    <% end %>
+  </div>
+
+  <!-- Technician Columns -->
+  <% @technicians.each do |technician| %>
+    <div class="technician-column">
+      <div class="technician-header"><%= technician.name %></div>
+      <% technician.work_orders.each do |order| %>
+        <% start_hour = order.start_time.hour %>
+        <% start_minute = order.start_time.min %>
+        <% if start_hour == 0 %>
+          <% start_hour = 12 %> 
+        <% elsif start_hour > 12 %>
+          <% start_hour -= 12 %> 
+        <% end %>
+        <% top_position = ((start_hour % 12) * 60 + start_minute + 60) + (order.start_time.hour >= 12 ? 720 : 0) %> <!-- Calculate the top position in min -->
+
+        <% end_time = (order.start_time + order.duration.minutes).strftime("%I:%M %p") %>
+        <div class="work-order" 
+             style="top: <%= top_position %>px; 
+                    height: <%= order.duration %>px;">
+          <strong><%= order.location.name %></strong> - <%= order.location.city %><br>
+          <%= order.start_time.strftime("%I:%M %p") %> - <%= end_time %><br>
+          $<%= order.price %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

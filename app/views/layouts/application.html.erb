@@ -14,9 +14,13 @@
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'work_orders', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <%= yield %>
+
+    <%= javascript_include_tag 'work_orders', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
