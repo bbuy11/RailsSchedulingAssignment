@@ -9,7 +9,6 @@ Here is the documentation used in creating the base of this project:
 * [Geeks for Geeks Tutorial](https://www.geeksforgeeks.org/ruby-on-rails-introduction/)
 * [Ruby on Rails Guide](https://guides.rubyonrails.org/v5.0/getting_started.html)
 
-There is a rake file to import the data from the csv files to the database called import.rake, found in app/lib/tasks. It can be run using "rake import:load_csv".
 
 
 ## How to run
